@@ -60,5 +60,13 @@ namespace PublicHoliday
         /// <param name="dt">The date you wish to check</param>
         /// <returns>True if date is a public holiday (excluding weekends)</returns>
         bool IsPublicHoliday(DateTime dt);
+
+        /// <summary>
+        /// Gets the date after a number of business days have been added.
+        /// </summary>
+        /// <param name="startDt">The initial date</param>
+        /// <param name="days">The number of business days to add to this date</param>
+        /// <returns>A date that is a working day</returns>
+        DateTime AddBusinessDays(DateTime startDt, int days);
     }
 }

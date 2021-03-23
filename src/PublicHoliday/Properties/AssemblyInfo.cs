@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PublicHoliday")]
 [assembly: AssemblyDescription("Calculate national public holidays for countries including US, UK, France, Belgium and Canada for any year")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Martin Willey")]
+[assembly: AssemblyCompany("FTB")]
 [assembly: AssemblyProduct("Holiday")]
 [assembly: AssemblyCopyright("Copyright © Martin Willey 2020")]
 [assembly: AssemblyTrademark("")]

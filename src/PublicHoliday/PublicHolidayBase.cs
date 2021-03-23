@@ -105,5 +105,23 @@ namespace PublicHoliday
         /// True if date is a public holiday (excluding weekends)
         /// </returns>
         public abstract bool IsPublicHoliday(DateTime dt);
+
+        /// <summary>
+        /// Gets the date after a number of business days have been added.
+        /// </summary>
+        /// <param name="startDt">The initial date</param>
+        /// <param name="days">The number of business days to add to this date</param>
+        /// <returns>A date that is a working day</returns>
+        public DateTime AddBusinessDays(DateTime startDt, int days)
+        {
+            DateTime result = startDt;
+
+            for (int x = 0; x < days; x++)
+            {
+                result = HolidayCalculator.NextWorkingDay(this, result.AddDays(1));
+            }
+
+            return result;
+        }
     }
 }

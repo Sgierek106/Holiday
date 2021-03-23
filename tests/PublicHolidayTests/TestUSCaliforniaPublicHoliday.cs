@@ -1,10 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PublicHoliday;
+using System;
 
 namespace PublicHolidayTests
 {
-
     /// <summary>
     /// Using official calendar from http://www.opm.gov/fedhol/2006.asp
     /// </summary>
@@ -51,7 +50,6 @@ namespace PublicHolidayTests
             Assert.AreEqual(expected, actual);
         }
 
-
         [TestMethod]
         public void TestMemorial2004()
         {
@@ -67,7 +65,6 @@ namespace PublicHolidayTests
             var actual = USACaliforniaPublicHoliday.IndependenceDay(2004);
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod]
         public void TestLabor2004()
@@ -141,7 +138,6 @@ namespace PublicHolidayTests
             Assert.AreEqual(expected, actual);
         }
 
-
         [TestMethod]
         public void TestMemorial()
         {
@@ -157,7 +153,6 @@ namespace PublicHolidayTests
             var actual = USACaliforniaPublicHoliday.IndependenceDay(2006);
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod]
         public void TestLabor()
@@ -239,7 +234,6 @@ namespace PublicHolidayTests
             Assert.AreEqual(new DateTime(1999, 11, 29), result);
         }
 
-
         [TestMethod]
         public void TestNextWorkingDayCesarChavez()
         {
@@ -267,6 +261,20 @@ namespace PublicHolidayTests
             {
                 Assert.IsTrue(hols.Contains(info), "observed date is implicitly in both lists");
             }
+        }
+
+        [TestMethod]
+        public void TestAddBusinessDays()
+        {
+            var USACaliforniaPublicHoliday = new USACaliforniaPublicHoliday();
+            
+            var startDt = new DateTime(2021, 3, 23);
+            var businessDays = 10;
+
+            var expected = new DateTime(2021, 4, 7);
+            var actual = USACaliforniaPublicHoliday.AddBusinessDays(startDt, businessDays);
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }
