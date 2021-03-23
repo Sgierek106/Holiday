@@ -7,6 +7,9 @@ namespace PublicHoliday
     /// Holidays for the state of California
     /// if a holiday falls on a Sunday it is celebrated the following Monday.
     /// </summary>
+    /// <remarks>
+    /// This is a fork of martinjw's excellent Holiday repo: https://github.com/martinjw/Holiday
+    /// </remarks>
     public class USACaliforniaPublicHoliday : PublicHolidayBase
     {
         #region Holiday Adjustments
